@@ -1,6 +1,8 @@
 import { addSpacesAmongLetters } from '../../utils/stringUtils'
+import Table from 'react-bootstrap/Table';
+import Button from 'react-bootstrap/Button';
 
-const TableReusable = ({ dataToPlaceInTheTable, updatingFormMethodForTheTable, className, onPutMethod, setAddFormVisibleForTheTable }) => {
+const TableReusable = ({ dataToPlaceInTheTable, updatingFormMethodForTheTable, className, onPutMethod, setAddFormVisibleForTheTable}) => {
 
     const tableRowClick = (clickedItem) => {
         updatingFormMethodForTheTable(clickedItem);
@@ -17,8 +19,8 @@ const TableReusable = ({ dataToPlaceInTheTable, updatingFormMethodForTheTable, c
 
     return (
         <>
-            <button id='add-button' onClick={() => openAddFormClick()}>Add</button>
-            <table className="table table-success">
+            <Button variant="primary" id='add-button' onClick={() => openAddFormClick()}>Add</Button>
+            <Table bordered hover>
                 <thead>
                     <tr>
                         {
@@ -36,16 +38,16 @@ const TableReusable = ({ dataToPlaceInTheTable, updatingFormMethodForTheTable, c
                 {
                     dataToPlaceInTheTable.map((item, index) => {
                         return(
-                            <tr key={index} onClick={() => tableRowClick(item)} >
+                            <tr key={index} >
                                 {
                                     Object.entries(item).map(([key, value]) => {
                                         if(value === true){
-                                            return (<td key={key}>{'True'}</td>)  
+                                            return (<td key={key} onClick={() => tableRowClick(item)}>{'True'}</td>)  
                                         }
                                         if(value === false){
-                                            return (<td key={key}>{'False'}</td>)  
+                                            return (<td key={key} onClick={() => tableRowClick(item)}>{'False'}</td>)  
                                         }
-                                        return (<td key={key}>{value}</td>)
+                                        return (<td key={key} onClick={() => tableRowClick(item)}>{value}</td>)
                                     })
                                 }
                                 <th><button key={index} onClick={() => deleteClick(item)}>Delete</button></th>
@@ -54,7 +56,8 @@ const TableReusable = ({ dataToPlaceInTheTable, updatingFormMethodForTheTable, c
                     })
                 }
                 </tbody>
-            </table>
+            </Table >
+            <Button variant="primary" id='add-button' onClick={() => openAddFormClick()}>Add</Button>
         </>
     )
 }

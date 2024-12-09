@@ -1,32 +1,112 @@
 import { Link } from 'react-router-dom'
 
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+
 const Menu = () => {
     return (
+
         <header>
+            <Navbar expand="lg" className="bg-body-tertiary">
+                <Container>
+                    <Navbar.Brand>
+                        <Link to="/">PDI Programmers</Link>
+                    </Navbar.Brand>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Collapse id="basic-navbar-nav">
+                        <Nav className="me-auto">
+                            <Nav.Link>
+                                <Link to="Inventory">Inventory</Link>
+                            </Nav.Link>
+                            <NavDropdown title="Orders" id="basic-nav-dropdown">
+                                <NavDropdown.Item>
+                                    <Link to="Order">Orders</Link>
+                                </NavDropdown.Item>
+                                <NavDropdown.Item>
+                                    <Link to="ProductListItem">Product List Items</Link>
+                                </NavDropdown.Item>
+                                <NavDropdown.Divider />
+                                <NavDropdown.Item>
+                                    <Link to="Shipment">Shipments</Link>
+                                </NavDropdown.Item>
+                            </NavDropdown>
+                            <NavDropdown title="Partners records" id="basic-nav-dropdown">
+                                <NavDropdown.Item>
+                                    <Link to="CustomersSupplier">Customers & Suppliers</Link>
+                                </NavDropdown.Item>
+                                <NavDropdown.Item>
+                                    <Link to="NaturalPearson">Natural Person</Link>
+                                </NavDropdown.Item>
+                                <NavDropdown.Item>
+                                    <Link to="CorporateEntity">Corporate Entity</Link>
+                                </NavDropdown.Item>
+                                <NavDropdown.Divider />
+                                <NavDropdown.Item>
+                                    <Link to="Address">Address</Link>
+                                </NavDropdown.Item>
+                                <NavDropdown.Item>
+                                    <Link to="AddressesList">Addresses List</Link>
+                                </NavDropdown.Item>
+                                <NavDropdown.Item>
+                                    <Link to="AddressType">Address Type</Link>
+                                </NavDropdown.Item>
+                            </NavDropdown>
+                            <NavDropdown title="Units Of Measurement" id="basic-nav-dropdown">
+                                <NavDropdown.Item>
+                                    <Link to="VariableUnitOfMeasurement">Variable Units Of Measurement</Link>
+                                </NavDropdown.Item>
+                                <NavDropdown.Divider />
+                                <NavDropdown.Item>
+                                    <Link to="BaseUnitOfMeasurement">BaseUnits Of Measurement</Link>
+                                </NavDropdown.Item>
+                            </NavDropdown>
+                            <NavDropdown title="Quotations" id="basic-nav-dropdown">
+                                <NavDropdown.Item>
+                                    <Link to="CurrencyQuotation">Currency Quotations</Link>
+                                </NavDropdown.Item>
+                                <NavDropdown.Divider />
+                                <NavDropdown.Item>
+                                    <Link to="BaseCurrency">Base Currencies</Link>
+                                </NavDropdown.Item>
+                            </NavDropdown>
+                            <NavDropdown title="Statuses" id="basic-nav-dropdown">
+                                <NavDropdown.Item>
+                                    <Link to="ShipmentStatusChange">Shipment Statuses Changes</Link>
+                                </NavDropdown.Item>
+                                <NavDropdown.Item>
+                                    <Link to="OrderStatusChange">Order Statuses Changes</Link>
+                                </NavDropdown.Item>
+                                <NavDropdown.Item>
+                                    <Link to="ProductsListItemStatusChange">Products List Item Statuses Changes</Link>
+                                </NavDropdown.Item>
+                                <NavDropdown.Divider />
+                                <NavDropdown.Item>
+                                    <Link to="ShipmentStatus">Shipment Statuses</Link>
+                                </NavDropdown.Item>
+                                <NavDropdown.Item>
+                                    <Link to="OrderStatus">Order Statuses</Link>
+                                </NavDropdown.Item>
+                                <NavDropdown.Item>
+                                    <Link to="ProductsListItemStatus">Products List Item Statuses</Link>
+                                </NavDropdown.Item>
+                            </NavDropdown>
+                            <Nav.Link>
+                                <Link to="Product">Products</Link>
+                            </Nav.Link>
+                        </Nav>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>
+
+
+
+
             <nav>
                 <ul className='nav'>
-                    <li className='nav-item'><Link className='nav-link' to="/" >Home</Link></li>
-                    <li className='nav-item'><Link className='nav-link' to="Address">Address</Link></li>
-                    <li className='nav-item'><Link className='nav-link' to="AddressesList">AddressesList</Link></li>
-                    <li className='nav-item'><Link className='nav-link' to="AddressType">AddressType</Link></li>
-                    <li className='nav-item'><Link className='nav-link' to="BaseCurrency">BaseCurrency</Link></li>
-                    <li className='nav-item'><Link className='nav-link' to="BaseUnitOfMeasurement">BaseUnitOfMeasurement</Link></li>
-                    <li className='nav-item'><Link className='nav-link' to="CorporateEntity">CorporateEntity</Link></li>
-                    <li className='nav-item'><Link className='nav-link' to="CurrencyQuotation">CurrencyQuotation</Link></li>
-                    <li className='nav-item'><Link className='nav-link' to="CustomersSupplier">CustomersSupplier</Link></li>
-                    <li className='nav-item'><Link className='nav-link' to="Inventory">Inventory</Link></li>
-                    <li className='nav-item'><Link className='nav-link' to="NaturalPearson">NaturalPearson</Link></li>
-                    <li className='nav-item'><Link className='nav-link' to="Order">Order</Link></li>
-                    <li className='nav-item'><Link className='nav-link' to="OrderStatusChange">OrderStatusChange</Link></li>
-                    <li className='nav-item'><Link className='nav-link' to="OrderStatus">OrderStatus</Link></li>
-                    <li className='nav-item'><Link className='nav-link' to="Product">Product</Link></li>
-                    <li className='nav-item'><Link className='nav-link' to="ProductListItem">ProductListItem</Link></li>
-                    <li className='nav-item'><Link className='nav-link' to="ProductsListItemStatusChange">ProductsListItemStatusChange</Link></li>
-                    <li className='nav-item'><Link className='nav-link' to="ProductsListItemStatus">ProductsListItemStatus</Link></li>
-                    <li className='nav-item'><Link className='nav-link' to="Shipment">Shipment</Link></li>
-                    <li className='nav-item'><Link className='nav-link' to="ShipmentStatusChange">ShipmentStatusChange</Link></li>
-                    <li className='nav-item'><Link className='nav-link' to="ShipmentStatus">ShipmentStatus</Link></li>
-                    <li className='nav-item'><Link className='nav-link' to="VariableUnitOfMeasurement">VariableUnitOfMeasurement</Link></li>
+
+
                 </ul>
             </nav>
         </header>
